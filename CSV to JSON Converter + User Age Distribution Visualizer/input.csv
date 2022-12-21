@@ -1,6 +1,2 @@
-name.firstName, name.lastName, age, address.line1, address.line2, address.city, address.state, gender, class
-Rohit, Prasad, 5, A-563 Rakshak Society, New Pune Road, Pune, Maharashtra, male, 5
-Rohit, Prasad, 36, A-563 Rakshak Society, New Pune Road, Pune, Maharashtra, male, 6
-Rohit, Prasad, 47, A-563 Rakshak Society, New Pune Road, Pune, Maharashtra, male, 7
-Rohit, Prasad, 86, A-563 Rakshak Society, New Pune Road, Pune, Maharashtra, male, 6
-Rohit, Prasad, 17, A-563 Rakshak Society, New Pune Road, Pune, Maharashtra, male, 7
+name.firstName, name.lastName, age, address.line1, address.line2, address.city, address.state, gender
+Rohit, Prasad, 35, A-563 Rakshak Society, New Pune Road, Pune, Maharashtra, male

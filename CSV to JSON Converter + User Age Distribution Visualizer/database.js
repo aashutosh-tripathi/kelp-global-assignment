@@ -13,7 +13,7 @@ client.on("connect", () => {
 })
 
 client.on("end", () => {
-    console.log('Connection Ended')
+    console.log('DB Connection Ended')
 })
 
 module.exports = client;

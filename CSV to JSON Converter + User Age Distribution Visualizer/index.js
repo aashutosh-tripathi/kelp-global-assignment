@@ -2,37 +2,38 @@ const fs = require("fs");
 const db = require('./app')
 const filepath = require('./environment')
 
-csv = fs.readFileSync(filepath)
+csvFile = fs.readFileSync(filepath)
 
 
 console.log('Reading CSV')
 
-var array = csv.toString().split("\r\n");
+var csv = csvFile.toString().split("\r\n");
 
-let result = [];
-let headers = array[0].split(", ")
+var result = [];
+var properties = csv[0].split(", ")
 
 
-var i = 0, j = 0;
-for (i = 1; i <= array.length - 1; i++) {
+var i = 0;
+var j = 0;
+for (i = 1; i <= csv.length - 1; i++) {
     var obj = {};
-    var myNewLine = array[i].split(", ");
-    for (j = 0; j < headers.length; j++) {
+    var curLineValues = csv[i].split(", ");
+    for (j = 0; j < properties.length; j++) {
 
-        var valueText = myNewLine[j];
-        var headerText = headers[j];
-        if (headers[j].split(".").length > 1) {
-            var header = headers[j].split(".")
-            var headerText2 = header[0];
+        var valueText = curLineValues[j];
+        var property = properties[j];
+        if (property.split(".").length > 1) {
+            var header = property.split(".")
+            var propertyText = header[0];
             var attribute = header[1];
 
-            if (!obj[headerText2]) {
-                obj[headerText2] = {};
+            if (!obj[propertyText]) {
+                obj[propertyText] = {};
             }
-            obj[headerText2][attribute] = valueText;
+            obj[propertyText][attribute] = valueText;
         }
         else {
-            obj[headerText] = valueText;
+            obj[property] = valueText;
         }
 
     };
@@ -40,7 +41,7 @@ for (i = 1; i <= array.length - 1; i++) {
 };
 
 
-let json = result;
+var json = result;
 
 console.log('CSV converted to JSON')
 console.log('Saving to database')
