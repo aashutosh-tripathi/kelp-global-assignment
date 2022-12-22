@@ -5,11 +5,12 @@ This Node JS application takes a CSV file as an input and convertes it into JSON
 Finally a report showing percentage distribution over different age ranges is presented on the console.
 
 
+Configure PostgreSQL connection using *'database.js'*
+Configure Input file path using *'environment.js'*
+
 How to run:
 - run command *npm install*
 - run command *node index.js*
-
-Configure Input file path using *'environment.js'*
 
 Technologies used:
 - Node JS
